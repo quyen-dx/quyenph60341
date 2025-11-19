@@ -37,7 +37,7 @@ function App() {
       <div className="w-[80%] mx-auto">
         <Banner />
         <Title title="TOUR NỘI ĐỊA"></Title>
-        <p className="text-xl font-medium my-2 px-2 text-center p-3 text-size-[120%]">
+        <p className="text-[20px] font-medium my-2 px-2 text-center p-3 text-size-[120%]">
         Các chuyến đi đồng hành cùng chúng tôi là khoảnh khắc đặc biêt, luôn sẵn
         sàng tạo ra những trải nghiệm độc đáo và không quên cho du khách, giúp
         mang đến những chuyến hành trình tuyệt vời!!!
