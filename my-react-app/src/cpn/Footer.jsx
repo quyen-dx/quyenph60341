@@ -1,15 +1,6 @@
 export default function Footer() {
   return (
-    <footer
-      style={{
-        textAlign: "center",
-        padding: "20px 0",
-        background: "#f5f5f5",
-        marginTop: "40px",
-        fontSize: "14px",
-        color: "#555"
-      }}
-    >
+    <footer className="text-center py-5 bg-gray-300 mt-10 text-sm text-gray-600">
       © {new Date().getFullYear()} Tour Du Lịch. All rights reserved.
     </footer>
   );
