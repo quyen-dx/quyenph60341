@@ -1,39 +1,38 @@
 import { Toaster } from "react-hot-toast";
-import List from "./pages/List";
+import {  Routes, Route, Link } from "react-router-dom";
+import List from "./pages/List.jsx";
+import Edit from "./pages/Edit.jsx";
+import Add from "./pages/Add.jsx";
+
 function App() {
   return (
     <>
       <nav className="bg-blue-600 text-white shadow">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <a href="#" className="text-xl font-semibold">
+          <Link to="/" className="text-xl font-semibold">
             <strong>WEB501 App</strong>
-          </a>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="hover:text-gray-200">
-              Trang chủ
-            </a>
-            <a href="../" className="hover:text-gray-200">
-              Danh sách
-            </a>
-            <a href="#" className="hover:text-gray-200">
-              Thêm mới
-            </a>
+            <Link to="/">Trang chủ</Link>
+            <Link to="/list">Danh sách</Link>
+            <Link to="/add">Thêm mới</Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#" className="hover:text-gray-200">
-              Đăng nhập
-            </a>
-            <a href="#" className="hover:text-gray-200">
-              Đăng ký
-            </a>
+            <Link to="/login">Đăng nhập</Link>
+            <Link to="/register">Đăng ký</Link>
           </div>
         </div>
       </nav>
 
-      {/* MAIN CONTENT */}
-      <List /> 
+      <Routes>
+        <Route path="/" element={<List />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/add" element={<Add />} />
+      </Routes>
+
       <Toaster />
     </>
   );
