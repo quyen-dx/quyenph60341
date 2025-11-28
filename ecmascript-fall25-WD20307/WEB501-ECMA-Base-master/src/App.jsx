@@ -3,7 +3,7 @@ import {  Routes, Route, Link } from "react-router-dom";
 import List from "./pages/List.jsx";
 import Edit from "./pages/Edit.jsx";
 import Add from "./pages/Add.jsx";
-
+import Home from "./pages/Home.jsx";
 function App() {
   return (
     <>
@@ -27,12 +27,11 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<List />} />
+        <Route path="/" element={<Home />} />
         <Route path="/list" element={<List />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/add" element={<Add />} />
       </Routes>
-
       <Toaster />
     </>
   );

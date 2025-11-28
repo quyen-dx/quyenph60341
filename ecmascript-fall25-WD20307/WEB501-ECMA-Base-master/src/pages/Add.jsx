@@ -44,7 +44,9 @@ function Add() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-semibold mb-6">Thêm tour mới</h1>
-
+      <div>
+        <img src="" alt="" srcset="" />
+      </div>
       <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
         <div>
           <label className="block font-medium mb-1">Tên tour</label>
