@@ -1,25 +1,30 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import toast from "react-hot-toast";
 function List() {
   const [tours, setTour] = useState([]);
 
   useEffect(() => {
+    
     axios
       .get("http://localhost:3001/tours")
       .then((response) => {
-        setTour(response.data);
+        setTour(response.data.tours || response.data);
       })
       .catch((error) => {
         console.error("Lỗi lấy dữ liệu", error);
       });
   }, []);
   const deleteTour = async (id) => {
+    const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
+    if(!confirm) return;
     try {
       await axios.delete(`http://localhost:3001/tours/${id}`);
       setTour(tours.filter(tour => tour.id !== id));
+      toast.success("Xóa thành công!");
     } catch (error) {
-      console.error("Lỗi xóa tour", error);
+      toast.error("Lỗi xóa tour", error);
     }
   }
   return (
@@ -44,7 +49,7 @@ function List() {
                 Giá
               </th>
               <th className=" p-4  text-center border-gray-300">
-                Số lượng còn lại
+                Tình trạng
               </th>
               <th className=" p-4  text-center border-gray-300">
                 Ảnh
@@ -63,7 +68,7 @@ function List() {
                 <td className="px-4 py-2 border border-gray-300">{tour.destination}</td>
                 <td className="px-4 py-2 border border-gray-300">{tour.duration}</td>
                 <td className="px-4 py-2 border border-gray-300">{tour.price.toLocaleString()}đ</td>
-                <td className="px-4 py-2 border border-gray-300">{tour.available}</td>
+                <td className="px-4 py-2 border border-gray-300">{tour.available === 1 ? "Còn chỗ" : "Hết chỗ"}</td>
                 <td className="px-4 py-2 border border-gray-300">
                   <img src={tour.image} alt={tour.name} className="w-20 h-16 object-cover rounded" />
                 </td>

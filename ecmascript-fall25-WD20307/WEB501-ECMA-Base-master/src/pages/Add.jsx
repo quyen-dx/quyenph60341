@@ -1,13 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // để redirect về list sau khi thêm
+import { useNavigate } from "react-router-dom"; 
+import { toast } from "react-hot-toast";
 
 function Add() {
   const [name, setName] = useState("");
   const [destination, setDestination] = useState("");
   const [duration, setDuration] = useState("");
   const [price, setPrice] = useState("");
-  const [available, setAvailable] = useState("");
+  const [available, setAvailable] = useState("1"); 
   const [image, setImage] = useState("");
   const navigate = useNavigate();
 
@@ -19,34 +20,31 @@ function Add() {
       destination,
       duration,
       price: Number(price),
-      available: Number(available),
+      available: Number(available), 
       image,
     };
 
     try {
       await axios.post("http://localhost:3001/tours", newTour);
-      alert("Thêm tour thành công!");
-      // Reset form
+      toast.success("Thêm tour thành công!");
+
       setName("");
       setDestination("");
       setDuration("");
       setPrice("");
-      setAvailable("");
+      setAvailable("1");
       setImage("");
-      // Chuyển về trang list
+
       navigate("/list");
     } catch (err) {
       console.error("Lỗi thêm tour:", err);
-      alert("Thêm tour thất bại!");
+      toast.error("Thêm tour thất bại!");
     }
   };
 
   return (
     <div className="p-6">
       <h1 className="text-2xl font-semibold mb-6">Thêm tour mới</h1>
-      <div>
-        <img src="" alt="" srcset="" />
-      </div>
       <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
         <div>
           <label className="block font-medium mb-1">Tên tour</label>
@@ -77,7 +75,6 @@ function Add() {
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
             required
-            
             className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
@@ -94,14 +91,15 @@ function Add() {
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Số lượng còn lại</label>
-          <input
-            type="number"
+          <label className="block font-medium mb-1">Tình trạng</label>
+          <select
             value={available}
             onChange={(e) => setAvailable(e.target.value)}
-            required
             className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          >
+            <option value="1">Còn chỗ</option>
+            <option value="0">Hết chỗ</option>
+          </select>
         </div>
 
         <div>
@@ -111,7 +109,6 @@ function Add() {
             value={image}
             onChange={(e) => setImage(e.target.value)}
             required
-            
             className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
