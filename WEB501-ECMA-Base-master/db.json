@@ -11,15 +11,21 @@
       "password": "$2a$10$Rdu/1EJrP81rlBcQvrUWbOQDk.iIVKMnlwX3AWgIySjrWOTKMBCvK",
       "username": "p",
       "id": 2
+    },
+    {
+      "email": "u@gmail.com",
+      "password": "$2a$10$GkYatjs0EVgjFLmGiHIeM.5M31cAFZYWEdQgMQmSEDvycSrs.g81e",
+      "username": "u",
+      "id": 3
     }
   ],
   "tours": [
     {
-      "name": "43",
-      "destination": "34324",
-      "duration": "343",
-      "price": 43243432434343430,
-      "available": 0,
+      "name": "7657567",
+      "destination": "76555555555555555555",
+      "duration": "55555555555555555555555",
+      "price": "555555555555555555555",
+      "available": 1,
       "image": "https://picsum.photos/400/300?random=8",
       "id": 7
     },
@@ -28,7 +34,7 @@
       "destination": "45",
       "duration": "4354",
       "price": 5435,
-      "available": 0,
+      "available": 1,
       "image": "https://picsum.photos/400/300?random=9",
       "id": 8
     },
@@ -37,7 +43,7 @@
       "destination": "fdsfdsf",
       "duration": "dsfsdf",
       "price": 321321,
-      "available": "1",
+      "available": 0,
       "image": "https://picsum.photos/400/300?random=3",
       "id": 9
     },
@@ -46,7 +52,7 @@
       "destination": "34",
       "duration": "324",
       "price": 34,
-      "available": "1",
+      "available": 0,
       "image": "https://picsum.photos/400/300?random=12",
       "id": 11
     },
@@ -55,7 +61,7 @@
       "destination": "4324",
       "duration": "324",
       "price": 32432,
-      "available": "1",
+      "available": 0,
       "image": "https://picsum.photos/400/300?random=19",
       "id": 12
     }

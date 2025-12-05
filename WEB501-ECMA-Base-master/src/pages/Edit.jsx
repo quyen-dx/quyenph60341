@@ -59,10 +59,6 @@ export default function Edit() {
           <input type="number" name="price" value={tour.price} onChange={handleChange} className="border px-2 py-1 w-full"/>
         </div>
         <div>
-          <label className="block">Số lượng còn lại:</label>
-          <input type="number" name="available" value={tour.available} onChange={handleChange} className="border px-2 py-1 w-full"/>
-        </div>
-        <div>
           <label className="block">Ảnh URL:</label>
           <input name="image" value={tour.image} onChange={handleChange} className="border px-2 py-1 w-full"/>
         </div>
