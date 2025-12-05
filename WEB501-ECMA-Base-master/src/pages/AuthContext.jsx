@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     setUsername(null);
   };
 
- 
+
   const value = {
     isLoggedIn,
     username,

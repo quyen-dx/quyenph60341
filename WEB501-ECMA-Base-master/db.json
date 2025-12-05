@@ -1,10 +1,16 @@
 {
   "users": [
     {
+      "username": "admin",
+      "password": "admin",
+      "email": "admin@gmail.com",
+      "id": 1
+    },
+    {
       "email": "q@gmail.com",
       "password": "$2a$10$DitFVv5k6/8a8k6Iqe5acuQ1Zt5zY3ercKXk/H6/VZ3/psz9ZUyXO",
       "username": "q",
-      "id": 1
+      "id": 2
     }
   ],
   "tours": [
@@ -13,7 +19,7 @@
       "destination": "5555",
       "duration": "10 ngày",
       "price": "5555",
-      "available": 0,
+      "available": 1,
       "image": "https://picsum.photos/400/300?random=8",
       "id": 7
     },
@@ -40,7 +46,7 @@
       "destination": "34",
       "duration": "324",
       "price": 34,
-      "available": 0,
+      "available": 1,
       "image": "https://picsum.photos/400/300?random=12",
       "id": 11
     },

@@ -35,7 +35,7 @@ export default function Home() {
               <p className="text-gray-800 font-bold mb-1">
                 Giá: {tour.price.toLocaleString()}đ
               </p>
-              <p className="text-gray-600">Số lượng: {tour.available}</p>
+              <p className="text-gray-600">Tình trạng: {tour.available === 1 ? "Còn chỗ" : "Hết chỗ"}</p>
             </div>
           </div>
         ))}
